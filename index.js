@@ -10,15 +10,62 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- // write your code here
+  var itemPrice = Math.floor(Math.random() * Math.floor(100))
+ var newItem = { [item]: itemPrice }
+ cart.push(newItem)
+ console.log(`${item} has been added to your cart.`)
+ return cart
 }
 
 function viewCart() {
-  // write your code here
+  var statement = "In your cart, you have "
+  var num = cart.length
+  if (num === 0){
+    statement = "Your shopping cart is empty."
+  } else {
+    var item = {}
+    var itemName
+    var price = 0
+    var index = 0
+    while (num > 0){
+      item = cart[index]
+      itemName = Object.keys(item)
+      price = item[itemName]
+      statement = statement + `${itemName} at $${price}`
+      if (num === 1){
+        statement = statement + "."
+      } else if (num === 2){
+        statement = statement + " and "
+      } else {
+        statement = statement +", and "
+      }
+      num--
+      index++
+  }
+  }
+  console.log(`${statement}`) 
 }
 
 function total() {
-  // write your code here
+  var num = 0
+  var total = 0
+  if (cart.length === 0){
+    return total
+  } else {
+    var item = {}
+    var itemName
+    while(num < cart.length) {
+      item = cart[num]
+      itemName = Object.keys(item)
+      console.log(`Cart Item: ${itemName}`)
+      console.log(`Cart Item: ${item[itemName]}`)
+      total = total + parseInt(item[itemName])
+      console.log(`Total = ${total}`)
+      num++
+    }
+    console.log(`${total}`)
+    return total
+  }
 }
 
 function removeFromCart(item) {

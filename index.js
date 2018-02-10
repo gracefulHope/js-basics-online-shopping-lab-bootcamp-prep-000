@@ -67,12 +67,24 @@ function total() {
   }
 }
 
-function removeFromCart(item) {
+function removeFromCart(itemName) {
   var thing = {}
-  var itemName
+  var thingName
+  var num = 0
+  var success = 0
   while(num < cart.length) {
-      item = cart[num]
-      itemName = Object.keys(item)
+      thing = cart[num]
+      thingName = Object.keys(item)
+      if (itemName === thingName){
+        success = 1
+        
+      }
+      num++
+  }
+  if (success === 0){
+    console.log("That items is not in your cart.")
+  }
+  return cart
 }
 
 function placeOrder(cardNumber) {

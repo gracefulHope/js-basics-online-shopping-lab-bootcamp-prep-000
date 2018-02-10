@@ -75,7 +75,6 @@ function removeFromCart(itemName) {
   while(num < cart.length) {
       thing = cart[num]
       if (thing.hasOwnProperty(itemName)){
-        console.log(`Success! Input item name: ${itemName}`)
         success = 1
         cart.splice(num, 1)
       }
@@ -92,6 +91,7 @@ function placeOrder(cardNumber) {
   if (cardNumber) {
     var totalPrice = total()
     console.log(`Your total cost is $${totalPrice}, which will be charged to the card ${cardNumber}.`)
+    cart = []
   } else {
     console.log("Sorry, we don't have a credit card on file for you.")
   }

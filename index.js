@@ -68,7 +68,11 @@ function total() {
 }
 
 function removeFromCart(item) {
-  
+  var thing = {}
+  var itemName
+  while(num < cart.length) {
+      item = cart[num]
+      itemName = Object.keys(item)
 }
 
 function placeOrder(cardNumber) {

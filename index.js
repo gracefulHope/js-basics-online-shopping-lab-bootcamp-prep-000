@@ -60,19 +60,15 @@ function total() {
     while(num < cart.length) {
       item = cart[num]
       itemName = Object.keys(item)
-      console.log(`Cart Item: ${itemName}`)
-      console.log(`Cart Item: ${item[itemName]}`)
       total = total + parseInt(item[itemName])
-      console.log(`Total = ${total}`)
       num++
     }
-    console.log(`${total}`)
     return total
   }
 }
 
 function removeFromCart(item) {
-  // write your code here
+  
 }
 
 function placeOrder(cardNumber) {

@@ -26,21 +26,20 @@ function viewCart() {
     var item = {}
     var itemName
     var price = 0
-    var index = 0
-    while (num > 0){
-      item = cart[index]
+    while (num < cart.length){
+      item = cart[num]
       itemName = Object.keys(item)
       price = item[itemName]
       statement = statement + `${itemName} at $${price}`
-      if (num === 1){
+      num++
+      if (num === cart.length){
         statement = statement + "."
-      } else if (num === 2){
+      } else if (num === cart.length + 1){
         statement = statement + " and "
       } else {
         statement = statement +", and "
       }
-      num--
-      index++
+      
   }
   }
   console.log(`${statement}`) 

@@ -77,6 +77,7 @@ function removeFromCart(itemName) {
       thingName = Object.keys(thing)
       if (itemName === thingName){
         console.log(`Input item name: ${itemName}`)
+        console.log(`Thing pulled from cart: ${thingName}`)
         success = 1
         cart.splice(num, 1)
       }

@@ -34,7 +34,7 @@ function viewCart() {
       num++
       if (num === cart.length){
         statement = statement + "."
-      } else if (num === cart.length + 1){
+      } else if (num === cart.length - 1){
         statement = statement + " and "
       } else {
         statement = statement +", and "

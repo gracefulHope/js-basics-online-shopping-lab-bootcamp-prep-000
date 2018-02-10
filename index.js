@@ -77,7 +77,7 @@ function removeFromCart(itemName) {
       thingName = Object.keys(item)
       if (itemName === thingName){
         success = 1
-        
+        cart.splice(num, 1)
       }
       num++
   }
